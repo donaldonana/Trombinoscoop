@@ -1,0 +1,39 @@
+header{
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 90px;
+	width: 100%;
+	border-bottom : 1px solid #133783;
+	/*background: #00ccff url("./logo1.png") no-repeat 0px 0px;*/
+}
+
+
+body{
+
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	color: #000333;
+	
+}
+
+body#loginPage section#content {
+
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	width: 500px;
+	margin: 0 0 0 -250px;
+	padding: 0
+} 
+
+form label {
+
+	display: block;
+	width: 150px;
+	float: left;
+	text-align: right;
+	padding: 4px 10px 0 0
+}

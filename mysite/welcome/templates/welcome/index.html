@@ -1,0 +1,87 @@
+{% extends "base.html "%}
+
+{% block title%}Acceuil{% endblock title%}
+
+{% block bodyId %}welcomePage{% endblock %}
+
+{% block headercontent %} 
+
+	<p id = "name"> {{logged_person.first_name}} {{logged_person.name}} </p>
+	<p id="function">
+	{% if logged_person.person_type == 'student' %}
+
+		Etudiant en 
+
+		{% if logged_person.year == 1 %} 
+			{{logged_person.year}}ère année
+		{% else %}
+			{{logged_person.year}}ème année
+		{% endif %}
+
+		{{logged_person.cursus.title}}
+	{% else %}
+
+		{{logged_person.job.title}}
+		dans la faculté {{logged_person.faculty}}
+	{% endif %}
+	</p>
+
+	<p id="profileLinks">
+
+		<!-- <a href="{% url 'welcome:signout' %} " class="buttonLink"> Voir Profil</a>
+		<a href="" class="buttonLink"> Modifier Profil</a> -->
+		<div class="dropdown" style="position: absolute; right: 55px; top: 35px">
+  <button class="dropbtn buttonLink">Dropdown</button>
+  <div class="dropdown-content buttonLink">
+    <a href=" {% url 'welcome:modif_profil' %}" > Modifier Profil</a>
+    <a href=" {% url 'welcome:show_profil' %} " > Voir Profil</a>
+    <a href="{% url 'welcome:signout' %} " > Deconnection </a>
+  </div>
+</div>
+		
+	</p>
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section id="messagesList">
+		
+		<form action=" " , method="get", class="inlineForm">
+
+			<label for="newMessagesInput"> Publier un message : </label>
+			<input type="text" name="newMessage" id="newMessagesInput">
+			<input type="submit" name="envoyer">
+			
+		</form>
+		<ul>
+			{% for message in friendsMessages%}
+				<li>
+					<p>
+						{{message.author.last_name}} {{message.author.first_name}} : 
+					</p>
+					<p>{{message.content}}</p>
+				</li>
+
+			{% endfor %}
+		</ul>
+
+	</section>
+
+	<section id="friendsList">
+		
+		<p class="title"> Mes amis </p>
+		<p><a href="{% url 'welcome:add_friend' %} " class="buttonLink"> ajouter</a></p>
+		<ul>
+			{% for friends in logged_person.friends.all %}
+			<li><a href="">{{friends.first_name}} {{friends.email}}</a></li>
+
+			{% endfor %}
+
+		</ul>
+		
+
+	</section>
+	
+{% endblock %}

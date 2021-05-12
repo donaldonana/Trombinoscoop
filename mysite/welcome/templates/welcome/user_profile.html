@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %} Creation de Profil {% endblock %}
+
+{% block bodyId %}userProfilePage{% endblock %}
+
+
+{% block content %}
+
+	<form style="margin-top: 50px">
+		<p>
+			<label for="profileType"> Vous etes :</label>
+			<select id="profileType">
+
+				<option value="student" {% if studentForm.is_bound%}
+										selected = "select" {%endif%}>Etudiant</option>
+				<option value="employee" {% if employeeForm.is_bound %}
+										selected = "select"{%endif%}>Employee</option>
+
+			</select>
+		</p>
+
+	</form>
+
+	<form action="register" method="get" id="studentForm">
+		<!-- Mesure de sécurité pour un Cross-site Request Forgery -->
+		{% csrf_token %}
+        <h1>Creation d'un Compte</h1>
+	
+    {% for field in studentForm %}
+      <p>
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+          
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red ; text-align : center">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    
+
+		<p>
+			<input type="hidden" name="profileType" value="student">
+			<input type="submit" style=" " value="Creer compte">
+
+		</p>
+
+	</form>
+	<form action="register" method="get" id="employeeForm">
+		<!-- Mesure de sécurité pour un Cross-site Request Forgery -->
+		{% csrf_token %}
+        <h1>Creation d'un Compte</h1>
+	
+    {% for field in employeeForm %}
+      <p>
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+          
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red ; text-align : center">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+		
+
+		<p>
+			<input type="hidden" name="profileType" value="employee">
+			<input type="submit" value="Creer compte">
+
+		</p>
+
+	</form>
+
+	<script type="text/javascript">
+
+		function DisplayRightForm() {
+
+			if ($('#profileType').val() == "student") {
+
+				$('#studentForm').show();
+				$('#employeeForm').hide()
+
+			}
+			else {
+				$('#employeeForm').show();
+				$('#studentForm').hide();
+			}
+
+		}
+		$(document).ready(function(){
+			DisplayRightForm();
+
+		});
+
+		$('#profileType').change(function () {
+			DisplayRightForm();
+		})
+
+
+
+
+	</script>
+
+{% endblock %}

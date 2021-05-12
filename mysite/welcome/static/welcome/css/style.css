@@ -1,0 +1,315 @@
+header{
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100px;
+	width: 100%;
+	border-bottom : 1px solid #133783;
+	background: #00ccff url("./logo1.png") no-repeat 0px 0px;
+}
+
+
+body{
+
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	color: #000333;
+
+}
+
+body section#content {
+
+	position: absolute;
+	top: 120px;
+	left: 50%;
+	width: 500px;
+	margin: 0 0 0 -250px;
+	padding: 0
+}
+
+body#loginPage section#content {
+
+	top: 250px;
+	position: absolute;
+	/*top: 120px;*/
+	left: 55%;
+	width: 500px;
+	margin: 0 0 0 -250px;
+	padding: 0
+}
+
+/*body#loginPage form a {
+
+	display: block;
+	margin: 20px 0px 0 160px;
+	width: 30%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d9dfea;
+	background-color: #00ccff;
+	color: #FFFFFF;
+	padding: 2px 15px 2px 15px;
+	text-align: center;
+}*/
+
+h1{
+	text-align: center;
+	font-size:22px;
+	margin:30px 50px 30px 60px;
+	padding:0 0 5px 0;
+	color: #3b5998;
+	border-bottom: 1px solid #3b5998;
+}
+
+form label {
+
+	display: block;
+	width: 150px;
+	float: left;
+	text-align: right;
+	padding: 4px 10px 0 0
+}
+
+form input[type = "email"], form input[type = "text"],
+form input[type = "password"], select {
+
+	display: block;
+	width: 250px;
+	padding: 2px;
+}
+
+
+body#loginPage form input[type = "submit"] {
+
+	margin: 10px 20px 0 80px;
+	border-style: solid;
+	border-radius: 20px;
+	border-width: 1px;
+	border-color: #d9dfea;
+	background-color: #00ccff;
+	color: #FFFFFF;
+	padding: 2px 15px 2px 15px;
+	text-align: center;
+
+}
+
+form input[type = "submit"] {
+
+	margin: 10px 20px 0 160px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d9dfea;
+	background-color: #00ccff;
+	color: #FFFFFF;
+	padding: 2px 15px 2px 15px;
+	text-align: center;
+
+}
+
+ul.errorlist {
+
+	margin-left: 160px;
+	color: pink;
+	list-style-type: none;
+	padding: 0;
+}
+
+
+body#welcomePage header p#name{
+
+	font-size: 22px;
+	margin: 45px 0 0 120px;
+	position: relative;
+	left: 100px;
+}
+
+
+body#welcomePage header p#function{
+
+	margin: 0 0 0 120px;
+	position: relative;
+	left: 100px;
+	/*text-align: center;*/
+}
+
+
+
+body#welcomePage header{
+
+	
+	
+	color: #FFFFFF ;
+	background: #00ccff url("./logo1.png") no-repeat 0px 0px;
+}
+
+
+body#welcomePage header p#profileLinks{
+
+	position: absolute;
+	top: 40px;
+	right: 25px;
+	/*text-align: center;*/
+}
+
+a.buttonLink{
+
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d9dfea ;
+	background-color: #00ccff;
+	color: #FFFFFF;
+	padding: 2px 15px 3px 15px ;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+/*****for messages and friends list*******/
+
+
+
+/*exception dimension for content*/
+
+body#welcomePage section#content{
+
+	width: 800px;
+	margin: 0 0 0 -400px;
+	margin-top: 40px;
+}
+
+
+/*only messages list*/
+
+body#welcomePage section#messagesList{
+
+	position: absolute;
+	width: 600px;
+	/*background-color: red;*/
+	/*margin-top: 30px;*/
+	}
+
+form.inlineForm label{
+
+	display: inline;
+	float: none;
+	padding: 0;
+}
+
+form.inlineForm input[type = "text"]{
+
+	display: inline-block;
+	width: 150px;
+}
+
+form.inlineForm input[type = "submit"]{
+
+	margin: 0;
+}
+
+
+section#messageList ul{
+
+	margin: 20px 0 0 0;
+	list-style : none;
+	padding : 0;
+}
+
+section#messageList ul li {
+
+	margin: 10px;
+}
+
+section#messageList ul li p {
+
+	margin: 8px 0 0 0;
+}
+
+/*only friends list*/
+
+body#welcomePage section#friendsList{
+
+	position: absolute;
+	width: 200px;
+	right: 0;
+	padding: 10px;
+	background-color: #DCE0ED;
+
+}
+
+
+section#friendsList p.title {
+
+	font-size: 22px;
+	color: #3b5998;
+	border-bottom: 1px solid #3b5998;
+	margin : 0 0 20px 0;
+}
+
+
+section#friendsList ul li {
+
+	margin: 0 0 5px 0 ;
+}
+
+section#friendsList ul{
+
+	margin: 20px 0 0 0;
+	list-style : none;
+	padding : 0;
+}
+
+section#friendsList a {
+
+	text-decoration: none;
+	color: black;
+}
+
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}

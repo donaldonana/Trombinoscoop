@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block header %} 
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'welcome/css/style.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'welcome/vendor/bootstrap/css/bootstrap.min.css '%}">
+	<script src="{% static 'welcome/js/jquery.min.js' %}"></script>
+{% endblock %}
+
+{% block title %} Connexion {% endblock %}
+
+{% block bodyId %}loginPage{% endblock %}
+
+
+{% block content %}
+
+	<!-- <form action="login" method="post"> -->
+		<!-- Mesure de sécurité pour un Cross-site Request Forgery -->
+		
+
+		<!-- {{form.as_p}} -->
+		
+		<form class="form-horizontal" role="form" style="" action="login" method="post">
+
+			{% csrf_token %}
+
+			<div class="form-group" form-group-lg style="">
+				<label for="Email_user" class="col-sm-2 control- label" style="	display: block;
+	width: 250px;
+	padding: 2px; 
+	margin-right: 10px;">Login</label>
+				
+				<input type="email" class="form-control" name="email" id="email" 
+				placeholder="Email or Username" style="	display: block;
+	width: 250px;
+	padding: 2px;">
+				
+			</div>
+			<div class="form-group" form-group-sm style="margin-top: 20px; ">
+				<label for="inputPassword" class="col-sm-2 control- 
+				label" style="	display: block;
+	width: 250px;
+	padding: 2px; 
+	margin-right: 10px;">Password</label>
+				
+				<input type="password" class="form-control" 
+				name="password" id="password" placeholder="Password" style="	display: block;
+																	width: 250px;
+																	padding: 2px;
+																	">
+				
+			</div>
+			<p style="margin-top: 30px;">
+				
+				
+				<input type="submit" value="Login"> 
+				<a href="{% url 'welcome:register' %} " style="text-align: center;"> Creer un compte</a>
+				
+			</p>
+		</form>
+		<!-- {% if error %}
+		<p class="error"> {{error}}</p>
+		{% endif %} -->
+
+	<!--
+		<p>
+			<label for="email"> Couriel :</label>
+			<input type="email" name="email" id="email" size="30">
+		</p>
+		<p>
+			<label for="password"> Mot de Passe :</label>
+			<input type="password" name="password" id="password" size="30">
+		</p> -->
+		<!-- <p>
+
+			<input type="submit" value="Se connecter"><br>
+			
+		</p> -->
+
+	<!-- </form> -->
+	
+{% endblock %}

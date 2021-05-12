@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %} Affichage de profil {% endblock %}
+
+{% block bodyId %}showProfilPage{% endblock %}
+
+
+{% block content %}
+
+<h1>Affichage d'un Profil</h1>
+
+<dl class="fieldList">
+	<dt>Nom: </dt>
+	<dd> {{user_to_show.last_name }}</dd>
+	<dt>Prenom: </dt>
+	<dd> {{user_to_show.first_name}} </dd>
+	<dt>matricule: </dt>
+	<dd> {{registration_number}} </dd>
+	<dt>Courriel: </dt>
+	<dd> {{user_to_show.email}} </dd>
+	<dt>Faculté: </dt>
+	<dd> {{user_to_show.faculty.name}}</dd>
+
+	{% if user_to_show.person_type == "student" %}
+	<dt>Cursus: </dt>
+	<dd> {{user_to_show.cursus.title}}</dd>
+	<dt>Annee: </dt>
+	<dd> {{user_to_show.faculty.year}}</dd>		
+
+	{% elif user_to_show.person_type == "Employee"%}
+	<dt>Bureau: </dt>
+	<dd> user_to_show.office</dd>
+	<dt>Campus: </dt>
+	<dd> user_to_show.campus.name</dd>
+
+	{% endif %}
+</dl>
+
+<p id="showProfilNav">
+	<a href="{% url 'welcome:index' %} " class="buttonLink">Retour</a>
+</p>
+
+{% endblock %}

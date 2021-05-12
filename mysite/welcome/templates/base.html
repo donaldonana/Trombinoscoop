@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% block header %} 
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'welcome/css/style.css'%}">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'welcome/vendor/bootstrap/css/bootstrap.min.css '%}"> -->
+	<script src="{% static 'welcome/js/jquery.min.js' %}"></script>
+	{% endblock %}
+	<title>Trombinoscoop - {% block title %} Bienvenue {% endblock %}</title>
+</head>
+<body id = "{% block bodyId %}genericPage{% endblock %}">
+
+	<header >
+
+		{% block headercontent %} {% endblock %}
+		<!-- <img src="{% static 'welcome/images/mode1.jpg' %}" > -->
+
+	</header>
+
+	<section id="content">
+
+		{% block content %} {% endblock %}
+	</section>
+
+</body>
+</html>

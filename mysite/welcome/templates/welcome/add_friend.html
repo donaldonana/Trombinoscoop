@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block title %} Ajout d'ami(e)s {% endblock %}
+
+{% block bodyId %}AddUserPage{% endblock %}
+
+
+{% block content %}
+
+
+	<form action="add_friend" method="post" >
+		<!-- Mesure de sécurité pour un Cross-site Request Forgery -->
+		{% csrf_token %}
+        <h1>Ajouter un ami</h1>
+	
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+          
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red ; text-align : center">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+
+    	<p>
+			<input type="submit" style="margin: 25px 20px 0 180px; width: 30%; border-radius: 20px; " value="Ajouter">
+		</p>
+
+	</form>
+
+{% endblock %}
